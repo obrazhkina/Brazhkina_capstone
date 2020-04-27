@@ -1,37 +1,155 @@
-## Welcome to GitHub Pages
+---
+title: "Capstone_2020"
+author: "Olga Brazhkina"
+date: "4/27/2020"
+output: html_document
+---
+2020 Capstone Assignment:
 
-You can use the [editor on GitHub](https://github.com/obrazhkina/Brazhkina_capstone/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Statistically Design an Experiment
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is the last one
+Turn this by the due date. 
+Write it in an R markdown and submit knitted html
+You can collaborate in so far as giving and receiving feedback from colleagues.
+5 pts per item!
+For a rubric on how to write this, see Chapter 10 in JABSTB. Follow that multi-step format!!!
+1) Provide a brief background and significance about a specific research problem that interests you. It could be project you’re involved with now, or a rotation project, or something you’d like to work on. The reader will need to understand enough background to make sense of the experiment you propose below. Keep it brief. In one short paragraph.
 
-### Markdown
+**Bioprinting technologies have become powerful tools for creating homogenous polymeric scaffolds with tunable properties capable of incorporating biomaterials. Specifically in cardiac applications, printable biomaterials are actively used to improve function of the damaged myocardium and activate cell signaling pathways that drive repair and regeneration. Cellular sources, such as cardiac progenitor cells (CPCs), have shown to improve cellular function and mimic cardiac tissue mechanics [1]. Mechanical stimuli such as cyclic strain and pressure have been shown to promote factors such as vascular endothelial growth factor (VEGF) which significantly affect cellular differentiation and regenerative capabilities [2]. French et al. found that cyclic strain improved VEGF production of CPCs grown on cECM [3]. However, these studies are limited by 2-D culture which is not reflective of the 3-D tissue structure. A detailed investigation of mechanosensing of cells in physiologically relevant 3-D environments could inform on the response of the cells to mechanical stimuli. Thus, we wish to develop an approach to combine 3-D printing and mechanically induced preconditioning to provide a closer investigation of the cell release profiles that aid cell retention and differentiation. This research will focus on studying the effects of preconditioning using optomechanical actuator (OMAs) nanoparticles on cell phenotype and signaling in 3-D printed patches. The OMA nanoparticles are able to deliver piconewton forces to cell surface receptors causing actuation [4], a property we will be utilizing to serve as a mechanical method of preconditioning a cell laden bioprinted patch.**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Citations: 1. Bejleri, D et al. Adv Healthcare Materials (2019) PMID: 30379414. 2. Broughton, KM and Sussman, MA. Circulation Research (2016) PMID: 26941423. 3. French, KM et al. Stem Cells Int (2016) PMID: 27610140. 4. Liu, Z et al. Nature Methods (2016) PMID: 26657558.**
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+2) Briefly state something that is unknown about this system that can be discovered through, and leads to, an experiment.  For example, "It is not known whether....."
 
-- Bulleted
-- List
+**It is not known whether OMA nanoparticle preconditioning of a 3D printed patch has an effect on the CPC paracrine release profile. Specifically for this project, vascular endothelial growth factor A (VEGF) secretion will be measured in OMA preconditioned CPC-laden bioprinted patches and non-preconditioned CPC-laden bioprinted patches.**
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+3) Make an “if” “then” prediction that is related to item #2. It should be of the general form, “if X is true, then Y should happen”.
 
-[Link](url) and ![Image](src)
+**If OMA preconditioning is able to stimulate VEGF secretion by CPCs, then the VEGF secretion on OMA preconditioned patches will differ from the VEGF secretion on non-preconditioned patches.**
+
+
+4) What dependent variable will be observed to test this prediction in item #3? What predictor variable will be used to manipulate the system experimentally? Define the inherent properties of these variables (eg, are they sorted, ordered or measured).
+
+**The response (dependent) variable to be tested will be VEGF secretion. This variable is a measured variable. The predictor (independent) variable will be the presence or absense  of OMA preconditioning on a bioprinted CPC patch. This variable is a sorted variable.**
+
+
+5) Write a statistical hypothesis.  There should be a null and alternate. These should be explicitly consistent with the prediction in item #3 and the response variable in #4. In other words, make sure the statistical hypotheses that you write here serves as a test of the prediction made in item #3.
+
+**Null hypothesis: The mean difference of VEGF secretion on OMA preconditioned patches and VEGF secretion on non-preconditioned patches will be 0. $\mu_{control}$ = $\mu_{OMA}$**
+**Alternate hypothesis: The mean difference of VEGF secretion on OMA preconditioned patches and VEGF secretion on non-preconditioned patches will be not be 0. $\mu_{control}$ =/= $\mu_{OMA}$**
+
+
+
+6) What is the statistical test you would use to test the hypothesis in item #5? Briefly defend what makes this appropriate for the hypothesis and the experimental variables. If there are alternatives, why is this approach chosen instead? Points will not be awarded if the justification involves something like "because everybody does it this way".
+                           
+**The statistical test that will be used to analyze this experiment is a two-sided paired t-test for comparing expression levels. A t-test is appropriate for this experimental setup because the analysis involves the independent variable of OMA preconditioning or absence on the bioprinted patch. Since the CPCs for each replicate will come from an original flask, the cells will be intrinsically linked. As a result, a paired t-test is more appropriate for data analysis. Two-sided was chosen because I want to predict if there's a difference in the two groups, without directionality.**
+
+                       
+
+
+7) List the procedures and decision rules you have for executing and interpreting the experiment. These procedures range from selection of experimental units, to randomization to primary endpoint to threshold decisions. Define (and defend) what you believe will be the independent replicate.
+                        
+**To delineate independence passange numbers of CPCs will be used. Each passage will be an independent experimental unit relative to all other passages, which will provide randomness to the experimental setup. Three technical replicates for each passage number will be used to average VEGF secretions in the conditioned media measured by ELISA. An additional blocking factor will be the day of the week (with fresh reagent batches) for creation of patches and data collection. Preconditioned and non-preconditioned patches will be randomly assigned to passage numbers and days of the week. The sample size will be based upon a power of 80% and tolerance level for type2 error will be 20% (β = 0.2). The decision threshold for type1 error will be 5% (α = 0.05). Thus, the null hypothesis will be rejected at a p-value of less than 0.05.**
+
+
+8) Produce a graph of a simulation for the expected results. Create a dataMaker-like function in R to create and plot the data. Label and scale any axis. The graph should illustrate the magnitude of the expected response, or the level of response that you expect to see and would be minimally scientifically relevant. Be sure to illustrate any variation that is expected.
+
+**Mean for control is about 350 pg/mL [3], and mean for OMA preconditioning patches is about 900 pg/mL [imaginary value]. A minimally scientifically significant difference in the means is about 550 pg/mL. The error bars represent standard deviation, which is expected to be about 100 pg/mL.**
+
+
+```{r}
+library(tidyverse)
+library(cowplot)
+
+set.seed(1234)
+
+b <- rnorm(3, mean=900, sd=100)
+a <- rnorm(3, mean=350, sd=100)
+
+long <- tibble(replicate_id=1:3, a, b) %>%  
+  pivot_longer(-replicate_id, 
+               names_to="predictor", 
+               values_to="response")
+
+data.w <- tibble(Control=a, "5% Strain"=b, id=c("A", "B", "C")) %>%
+  pivot_longer(cols=c(Control, "5% Strain"),
+               names_to="Predictor",
+               values_to="Response")
+
+data.wd <- data.w %>% 
+  select(id, Predictor, Response) %>% 
+  group_by(id) %>% 
+  summarise(dif=diff(Response))
+
+p1 <- ggplot(data.w, aes(Predictor, Response, group=id)) +
+  geom_point(size=4) +
+  geom_line(color="red")+
+  labs(y="VEGF Secretion (pg/mL)", x="OMA Preconditioning")
+
+p2 <- ggplot(data.wd, aes(x=factor("5% Strain - Control"), y=dif))+
+  geom_point(size=4) + 
+  stat_summary(fun.data = mean_cl_normal,
+               fun.args = list(conf.int=0.95),
+               geom="crossbar", 
+               width=0.2, 
+               color="red")+
+  geom_hline(aes(yintercept=0), 
+             color="blue", size=2, 
+             linetype="dashed")+
+  scale_y_continuous(limits=c(0, 900)) +
+  labs(y="VEGF Secretion Difference (pg/mL)", x="OMA Preconditioning")
+
+title <- ggdraw()+
+  draw_label("VEGF Secretions After OMA Preconditioning of 3D-printed Cardiac Patches",
+             fontface='bold', x=0.005, hjust=0)
+
+Final <- plot_grid(p1, p2, labels="AUTO")
+plot_grid(title,Final,ncol = 1,rel_heights = c(0.2, 1))
+
+
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+9) Write and perform a Monte Carlo analysis to calculate a sample size necessary to test the hypothesis. This Monte Carlo must test the primary endpoint.
+**The Monte Carlo analysis showed that a sample size of n = 3 will be appropriate to achieve 0.8 power given the standard deviation of each sample at 100 pg/mL and a difference in means of 550 pg/mL.**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/obrazhkina/Brazhkina_capstone/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```{r}
+#Monte Carlo Simulation
 
-### Support or Contact
+#intitializers
+m1=350; sd1=100 #control group patch
+m2=900; sd2=100 #OMA preconditioned patch
+n = 3
+ssims=10000
+p.values <- c()
+i <- 1
+  
+#MC
+repeat{
+    x=rnorm(n, m1, sd1); 
+    y=rnorm(n, m2, sd2);
+    p <- t.test(x, y, #paired two-sided t-test
+                paired=T,
+                alternative="two.sided")$p.value
+    p.values[i] <- p
+    if (i==ssims) break
+    i = i+1
+}
+  
+#Power
+pwr <-length(which(p.values<0.05))/ssims;
+paste(pwr, sep="","% power")
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+10) Write up it all in RMarkdown. Code chunks to illustrate specific points are welcome other than for the Monte Carlo code. Knit and submit and upload the html document by the due data. If it is readable to your best friend, it is readable to us.
+
+EXTRA CREDIT: Github is an important resource for sharing data/analyses and collaborating.  In fact, 3 different Github repositories were used for the material in this course. We encourage you to submit your capstone as a Github page, as a gentle way to play with Github. See the directions Jessie wrote up: GitHub_pages_IBS538.pdfPreview the document
+
+If you submit your capstone on Github, we'll need you to knit and submit a different document on Canvas. For that, just open up a blank Rmd. Only put the link to your github page in it. Knit and submit its html on canvas. The markdown code for a link is like this:
+
+Thanks for such an exciting semester Austin, Jess, Lauren & even you, TJ! [Please click here to see my capstone project on Github.](https://url_of_my_capstone (Links to an external site.))
+
+Those brackets and parentheses make the markdown happen.
