@@ -111,7 +111,8 @@ plot_grid(title,Final,ncol = 1,rel_heights = c(0.2, 1))
 
 
 ```
-![image](https://user-images.githubusercontent.com/64440716/80420994-b4a84a80-88a9-11ea-9845-2d7fd2a7c838.png)
+
+![image](https://user-images.githubusercontent.com/64440716/80421506-9727b080-88aa-11ea-8286-5601aee7ab3b.png)
 
 9) Write and perform a Monte Carlo analysis to calculate a sample size necessary to test the hypothesis. This Monte Carlo must test the primary endpoint.
 **The Monte Carlo analysis showed that a sample size of n = 3 will be appropriate to achieve 0.8 power given the standard deviation of each sample at 100 pg/mL and a difference in means of 550 pg/mL.**
