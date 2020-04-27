@@ -111,7 +111,7 @@ plot_grid(title,Final,ncol = 1,rel_heights = c(0.2, 1))
 
 
 ```
-
+![image](https://user-images.githubusercontent.com/64440716/80420994-b4a84a80-88a9-11ea-9845-2d7fd2a7c838.png)
 
 9) Write and perform a Monte Carlo analysis to calculate a sample size necessary to test the hypothesis. This Monte Carlo must test the primary endpoint.
 **The Monte Carlo analysis showed that a sample size of n = 3 will be appropriate to achieve 0.8 power given the standard deviation of each sample at 100 pg/mL and a difference in means of 550 pg/mL.**
@@ -143,6 +143,7 @@ repeat{
 pwr <-length(which(p.values<0.05))/ssims;
 paste(pwr, sep="","% power")
 ```
+# [1] "0.8879% power"
 
 10) Write up it all in RMarkdown. Code chunks to illustrate specific points are welcome other than for the Monte Carlo code. Knit and submit and upload the html document by the due data. If it is readable to your best friend, it is readable to us.
 
